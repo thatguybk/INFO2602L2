@@ -1,4 +1,4 @@
-# INFO 2602 Lab 3
+# INFO 2602 Lab 2
 
 ## Repl Setup
 - fork this repo
