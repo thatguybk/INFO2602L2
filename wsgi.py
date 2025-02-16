@@ -58,3 +58,14 @@ def create_user(username, email, password):
     print("Username or email already taken!")
   else:
     print(newuser)
+
+@app.cli.command('delete-user')
+@click.argument('username', default='bob')
+def delete_user(username):
+  bob = User.query.filter_by(username=username).first()
+  if not bob:
+      print(f'{username} not found!')
+      return
+  db.session.delete(bob)
+  db.session.commit()
+  print(f'{username} deleted')
